@@ -9,7 +9,7 @@ I'm going to use YAML format for creating the Jenkins Pipeline using Jenkins Job
 
 #### To install:
 
-` pip install --user jenkins-job-builder'
+`pip install --user jenkins-job-builder`
 
 
 #### Test a job definition:
@@ -45,4 +45,4 @@ Once you’ve tested your job definition and are happy with it then you can use 
 
 To generate a plugins info, using an account with Administrator rights:
 
-'jenkins-jobs get-plugins-info -o plugins_info.yaml`
+`jenkins-jobs get-plugins-info -o plugins_info.yaml`
