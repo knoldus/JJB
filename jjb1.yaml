@@ -1,0 +1,19 @@
+- job:
+    name: jjb-pipeline1
+    project-type: pipeline       
+    pipeline-scm:
+      scm:
+        - cockpit-Job-Template
+    sandbox: true
+    builders:
+      - shell: 'docker build -t cockpit:01 .' #build the docker image
+      
+
+- scm:
+    name: cockpit-Job-Template
+    scm:
+      - git:
+          url: <git-repo-url>
+          credentials-id: "git" # id of the  github credentials in your jenkins
+          branches:
+            - master

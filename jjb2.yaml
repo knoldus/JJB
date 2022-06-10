@@ -1,0 +1,31 @@
+- job:
+    name: jjb_job1
+    project-type: pipeline
+    sandbox: true
+    # pipeline script
+    dsl: |
+      pipeline {
+        agent any
+        environment{
+          cred=credentials('dockerhub')
+        } 
+        stages {
+          stage("Checkout") {
+           
+            steps {
+                  git(
+                  url: 'git-repo-url',
+                  branch: "main"
+                )
+              }
+            }
+
+            stage("Build") {
+            steps {
+                sh "docker build -t cockpit:01 ."
+            }
+           }
+          }
+        }
+
+      
